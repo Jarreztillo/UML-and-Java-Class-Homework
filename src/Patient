@@ -1,0 +1,109 @@
+package Homework;
+
+import java.util.Date;
+import java.util.List;
+import java.util.ArrayList;
+import Class_Diagrams.
+
+public class Patient {
+    private String name;
+    private String CI;
+    Date birth_date = new Date();
+    private boolean sex;
+    private double weight;
+    private double height;
+    private String address;
+    private List<Photos> photos;
+    private List<Diseases> diseases;
+    
+    
+    public Patient (String name, String CI, Date birth_date, boolean sex, float weight, float height, String address, ArrayList photos, ArrayList diseases){
+        this.name = name;
+        this.CI = CI;
+        this.birth_date = birth_date;
+        this.sex = sex;
+        this.weight = weight;
+        this.height = height;
+        this.address = address;
+        this.photos = new ArrayList<>();
+        this.diseases = new ArrayList<>();
+        
+    
+    }
+    
+    public String get_Patient_Name(){
+    
+        return name;
+        
+    }
+    public void set_Patient_Name(String name){
+    
+        this.name = name;
+        
+    }
+    public String get_Patient_CI(){
+    
+        return CI;
+        
+    }
+    public void set_Patient_CI(String CI){
+        
+    
+        this.CI = CI;
+        
+    }
+    public Date get_Patient_Birth_Date(){
+    
+        return birth_date;
+        
+    }
+    public void set_Patient_Birth_Date(Date birth_date){
+    
+         this.birth_date = birth_date;
+        
+    }
+    public boolean get_Patient_Sex(){
+    
+        return sex;
+        
+    }
+     public void set_Patient_Sex(boolean sex){
+    
+        this.sex = sex;
+        
+    }
+    public double get_Patient_Weight(){
+    
+        return weight;
+        
+    }
+    public void set_Patient_Weight(double weight){
+    
+        this.weight = weight;
+        
+    }
+    public double get_Patient_Height(){
+    
+        return height;
+        
+    }
+    
+    public void set_Patient_Height(double height){
+    
+        this.height = height;
+        
+    }
+    
+    public String get_Patient_Address(){
+    
+        return address;
+        
+    }
+    public void set_Patient_Address(String address){
+    
+        this.address = address;
+        
+    }
+    
+    
+}
