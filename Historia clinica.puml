@@ -1,0 +1,77 @@
+@startuml
+
+Patient "1" o-> "0...*" Photo: haves
+Patient "1" o-> "1...*" Diseases: suffers
+
+class Patient{
+-Name: String
+-CI: String
+-Birth_Date: Date
+-Sex: boolean
+-Weight: double
+-Height: double
+-Address: String
+-Photos: List<Photo>
+-Diseases: List<Diseases>
+
++Patient()
++Patient(Name: String, CI: String, Birth_Date: Date, Sex: boolean, Weight: double, Height: double, Address: String, photos: Photo, diseases: Diseases)
++Get_Name(): String
++Set_Name(Name: String): String
++Get_CI(): String
++Set_CI(CI: String): String
++Get_Birth_Date(): Date
++Set_Birth_Date(Birth_Date : Date): Date
++Get_Sex(): boolean
++Set_Sex(Sex : boolean): boolean
++Get_Weight(): double
++Set_Weight(Weight: double): double
++Get_Height(): double
++Set_Height(Height: double): double
++Get_Address(): String
++Set_Address(Address: String): String
++add_Photo(photo: Photo): void
++add_Disease(disease: Diseases ) :void
++delete_Photo(photo: Photo): void
++delete_Disease(disease: Disease): void
+}
+
+class Photo{
+-Photo_Name : String
+-Photo_Date: Date
+-Photo_Type: String
+-Doctor_opinion: String
+
++Photo()
++Photo(Photo_Name: String, Photo_Date: Date, Photo_Type: String, Doctor_opinion: String)
++Get_Photo_Name(): String
++Set_Photo_Name(Photo_Name: String): String
++Get_Photo_Date(): Date
++Set_Photo_Date(Photo_Date: Date): Date
++Get_Photo_Type(): String
++Set_Photo_Type(Photo_Type: String): String
++Get_Doctor_opinion(): String
++Set_Doctor_opinion(Doctor_opinion: String): String
+}
+
+class Diseases{
+-Disease_Name: String
+-Disease_Date: Date
+-Disease_Treatment: String
+
++Diseases()
++Diseases(Disease_Name: String, Disease_Date: Date, Disease_Treatment: String)
++Get_Disease_Name(): String
++Set_Disease_Name(Disease_Name: String): String
++Get_Disease_Date(): Date
++Set_Disease_Date(Disease_Date: Date): Date
++Get_Disease_Treatment(): String
++Set_Disease_Treatment(Disease_Treatment: String): String
+
+}
+
+
+
+
+
+@enduml
