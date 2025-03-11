@@ -3,7 +3,6 @@ package Homework;
 import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
-import Class_Diagrams.
 
 public class Patient {
     private String name;
