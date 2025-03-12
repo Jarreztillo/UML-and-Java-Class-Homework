@@ -1,0 +1,46 @@
+package Homework;
+
+import java.util.*;
+
+public class User{
+    private List<Patient> patients;
+
+    public User(){
+        patients=new ArrayList<>();
+    }
+
+    public void add_Patient(Patient patient){
+        patients.add(patient);
+    }
+    public void delete_Patient(Patient patient){
+        patients.remove(patient);
+    }
+    public Patient search_Patient_CI(String identification){
+        return patients.stream()
+                .filter(p-> p.getIdentification().equals(identification))
+                .findFirst()
+                .orElse(null);
+    }
+    public List<Patient>getIDMaxTallness(){
+        if (patients.isEmpty())return new ArrayList<>();
+        double maxTallness=patients.stream().mapToDouble(Patient::getTallness).max().getAsDouble();
+        return patients.stream().filter(p-> p.getTallness()==maxTallness).toList();
+    }
+    public int count_Women_With_Dengue(){
+        return (int) patients.stream()
+                .filter(p -> p.getSex().equalsIgnoreCase("femenino"))
+                .filter(p -> p.getSicknesses().stream().anyMatch(d-> d.getName().equalsIgnoreCase("dengue")))
+                .count();
+    }
+    public List<Patient> list_Sorted_Patients_By_Name(){
+        List<Patient> copia=new ArrayList<>(patients);
+        Collections.sort(copia, Comparator.comparing(Patient::getName));
+        return copy;
+    }
+    public List<Patient> list_Sorted_Patients_By_Weight(){
+        List<Patient> copia=new ArrayList<>(patients);
+        Collections.sort(copia, Comparator.comparingDouble(Patient::getWeight).reversed());
+        return copy;
+    }
+
+}
